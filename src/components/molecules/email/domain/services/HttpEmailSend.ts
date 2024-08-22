@@ -1,11 +1,11 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 
 import { EmailSendParams } from '../models/EmailSendParams'
 import { sendEmail } from '@/helpers/rootServer'
 import { apis } from './apis'
 import getEmail from '../../helper/getEmail'
 
-const HttpResend = async (resend: EmailSendParams) => {
+const HttpEmailSend = async (resend: EmailSendParams) => {
   const url: string = apis.url_sendmail
   const params = {
     "Correo Electrónico": resend.email,
@@ -56,4 +56,4 @@ const HttpResend = async (resend: EmailSendParams) => {
   }
 }
 
-export default HttpResend
+export default HttpEmailSend

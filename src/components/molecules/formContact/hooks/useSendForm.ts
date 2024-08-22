@@ -12,7 +12,7 @@ import { COUNTRY } from '@/components/atoms/inputPhonePicker/domain/models/schem
 import { Country } from '@/components/atoms/inputPhonePicker/domain/models/interfaces/Countries'
 import httpCountry from '@/components/atoms/inputPhonePicker/domain/services/HttpCountry'
 import { EmailSendParams } from '@/components/molecules/email/domain/models/EmailSendParams'
-import HttpResend from '@/components/molecules/email/domain/services/HttpEmailSend'
+import HttpEmailSend from '@/components/molecules/email/domain/services/HttpEmailSend'
 
 const useSendForm = (
   initialForm: FormContactParams = {},
@@ -101,7 +101,7 @@ const useSendForm = (
       //   onReset()
       // }, 2000);
 
-      HttpResend(paramsEmailSend)
+      HttpEmailSend(paramsEmailSend)
       .then(data => {
         setError({ status: true, messages: [
           translation.MESSAGE.CONTACT_SUCCESS
