@@ -74,48 +74,48 @@ const useSendForm = (
     } else {
       setError({ status: false, messages: [], type: 'danger' })
               
-      // const params: ContactParams = {
-      //   email: formState.email,
-      //   name: `${formState.first_name} ${formState.last_name}`,
-      //   phone: formState.phone_number,
-      //   code_number: formState.code_number
-      // } as ContactParams
-
-      const paramsEmailSend: EmailSendParams = {
+      const params: ContactParams = {
         email: formState.email,
         name: `${formState.first_name} ${formState.last_name}`,
         phone: formState.phone_number,
-        subject: "Mensaje de Contacto",
-        text: '',
-        company: 'FyH Asociados'
-      } as EmailSendParams
+        code_number: formState.code_number
+      } as ContactParams
 
-      // console.log(params, formState)
+      // const paramsEmailSend: EmailSendParams = {
+      //   email: formState.email,
+      //   name: `${formState.first_name} ${formState.last_name}`,
+      //   phone: formState.phone_number,
+      //   subject: "Mensaje de Contacto",
+      //   text: '',
+      //   company: 'FyH Asociados'
+      // } as EmailSendParams
 
-      // setTimeout(() => {
-      //   setError({ status: true, messages: [
-      //     translation.MESSAGE.CONTACT_SUCCESS
-      //   ], type: 'success' })
-      //   onDisableButton()
-      //   onChageCountry('','')
-      //   onReset()
-      // }, 2000);
+      console.log(params, formState)
 
-      HttpEmailSend(paramsEmailSend)
-      .then(data => {
+      setTimeout(() => {
         setError({ status: true, messages: [
           translation.MESSAGE.CONTACT_SUCCESS
         ], type: 'success' })
         onDisableButton()
         onChageCountry('','')
         onReset()
-      })
-      .catch(error => {
-        setError({ status: true, messages: [
-          translation.MESSAGE.CONTACT_ERROR
-        ], type: 'danger' })
-        onDisableButton()
-      })
+      }, 2000);
+
+      // HttpEmailSend(paramsEmailSend)
+      // .then(data => {
+      //   setError({ status: true, messages: [
+      //     translation.MESSAGE.CONTACT_SUCCESS
+      //   ], type: 'success' })
+      //   onDisableButton()
+      //   onChageCountry('','')
+      //   onReset()
+      // })
+      // .catch(error => {
+      //   setError({ status: true, messages: [
+      //     translation.MESSAGE.CONTACT_ERROR
+      //   ], type: 'danger' })
+      //   onDisableButton()
+      // })
       
       // httpContact(params)
       // .then(data => {
