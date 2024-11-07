@@ -18,6 +18,7 @@
 	/* ---- Colors ---- */
 
 	--primary: #FF735C;
+	--primary300: #dee9ff;
 	--secondary: #FFF1EE;
 	--tertiary: #474698;
 	--main: #1E1F4B;
@@ -39,6 +40,7 @@
 	/* ---- gradients ---- */
 
 	--banner-modal-gradient: linear-gradient(95deg, #465097 46.12%, #000 116.5%);
+	
 
 
 	/* ---- Size and Width Buttons ---- */

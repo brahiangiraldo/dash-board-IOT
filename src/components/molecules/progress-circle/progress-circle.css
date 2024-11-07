@@ -1,0 +1,73 @@
+.circle-skill-progress {
+	width: 80px;
+	height: 80px;
+	position: relative;
+	display: grid;
+	place-items: center;
+}
+.circle-outer-progress {
+	width: 70px;
+	height: 70px;
+	padding: 8px;
+	border-radius: 50%;
+	box-sizing: border-box;
+	background-color: var(--primary300);
+}
+.circle-inner-progress {
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--bg-progress-circle);
+}
+.circle-number-progress {
+	font-weight: 600;
+	color: var(--normal-letter);
+	font-size: 1.1rem;
+}
+.svg-circle-inner-progress {
+	fill: none;
+	stroke: #6c4675;
+	stroke-width: 10px;
+	stroke-dasharray: 185;
+	stroke-dashoffset: 185;
+	transition: stroke-dashoffset 2s linear forwards;
+}
+
+.svg-progress {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/****Sizes****/
+.circle-inner-md {
+	width: 92px;
+	height: 92px;
+}
+.circle-outer-sm {
+	width: 70px;
+	height: 70px;
+}
+.circle-outer-md {
+	width: 132px;
+	height: 132px;
+}
+
+.skill-circle-sm {
+	width: 80px;
+	height: 80px;
+}
+.skill-circle-md {
+	width: 132px;
+	height: 132px;
+}
+
+.svg-circle-inner-md {
+	stroke-dasharray: 348;
+	stroke-dashoffset: 348;
+}
