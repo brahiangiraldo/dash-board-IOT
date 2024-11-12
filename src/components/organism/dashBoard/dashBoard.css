@@ -14,8 +14,25 @@
   z-index: -1;
 }
 
-.dashboard-menu{
-padding: 30px;
+.container_dashboard-menu {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center
+;
+
+}
+
+.dashboard-menu {
+  width: 30%; 
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.dashboard-content {
+  width: 70%;
+  padding: 30px 120px 30px 30px; 
 }
 
 .dashboard-title {
@@ -29,17 +46,18 @@ padding: 30px;
   text-align: center;
   color: #fff;
   margin: 40px auto 60px auto;
-  background: linear-gradient(124.79deg,
-      #b1cdee 5.82%,
-      #bbd5ee 23.76%,
-      #c4e3ee 34.43%,
-      #aae4ee 59.12%,
-      #a0d1e9 65.79%,
-      #abcdee 77.92%);
+  background: linear-gradient(
+    124.79deg,
+    #b1cdee 5.82%,
+    #bbd5ee 23.76%,
+    #c4e3ee 34.43%,
+    #aae4ee 59.12%,
+    #a0d1e9 65.79%,
+    #abcdee 77.92%
+  );
   border-radius: 29px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .dashboard-items {
   margin: 20px;
@@ -58,7 +76,6 @@ padding: 30px;
   gap: 40px;
 }
 
-
 /* ---- responsive ---- */
 
 @media screen and (max-width: 990px) {
@@ -67,7 +84,15 @@ padding: 30px;
     align-items: center;
   }
 
-  .dashboard-menu {
+  .container_dashboard-menu {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .dashboard-menu,
+  .dashboard-content {
+    width: 100%;
     padding: 20px;
   }
 
@@ -85,10 +110,12 @@ padding: 30px;
   }
 
   .cards-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
-
-  
 }

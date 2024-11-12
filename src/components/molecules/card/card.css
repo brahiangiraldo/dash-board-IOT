@@ -21,7 +21,7 @@
 	font-style: normal;
 	font-weight: 600;
 	font-size: 16px;
-	line-height: 2.4rem;
+	/* line-height: 2.4rem; */
 	letter-spacing: -0.05rem;
 	color: var(--normal-letter);
 }

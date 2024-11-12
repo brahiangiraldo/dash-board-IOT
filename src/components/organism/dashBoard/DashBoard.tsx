@@ -40,60 +40,62 @@ const DashBoard = ({ cards = [] }: DashBoardProps) => {
         />
       </div>
 
-      <div className="dashboard-menu">
-        <MenuContent
-          username="Maria Camila Echavarria"
-          documentId="1000090191"
-          age={24}
-          height={1.6}
-          weight={50}
-          title="Datos del paciente"
-          open={true}
-        />
-      </div>
-
-      <div className="dashboard-content">
-        <div className="dashboard-title">
-          Sistema de Monitoreo Remoto de Actividad Física
+      <div className="container_dashboard-menu">
+        <div className="dashboard-menu">
+          <MenuContent
+            username="Maria Camila Echavarria"
+            documentId="1000090191"
+            age={24}
+            height={1.6}
+            weight={50}
+            title="Datos del paciente"
+            open={true}
+          />
         </div>
 
-        <div className="dashboard-items">
-          {randomCards.map((card, index) => (
-            <Card key={index} {...card} />
-          ))}
-        </div>
+        <div className="dashboard-content">
+          <div className="dashboard-title">
+            Sistema de Monitoreo Remoto de Actividad Física
+          </div>
 
-        <div className="cards-container">
-          <Card
-            title={getRandomValue(100, 150).toString()}
-            subtitle="Valor Actual Ritmo Cardiaco"
-            showWave={true}
-            widget={
-              <IconFactory
-                color="#AABDFF"
-                height={70}
-                width={74}
-                name="HomeSimple"
-              />
-            }
-            percentageWidth={100}
-            percentageHeight={80}
-          />
-          <Card
-            title={getRandomValue(100, 150).toString()}
-            subtitle="Historico Ritmo Cardiaco"
-            showWave={true}
-            widget={
-              <IconFactory
-                color="#AABDFF"
-                height={70}
-                width={74}
-                name="HomeSimple"
-              />
-            }
-            percentageWidth={100}
-            percentageHeight={80}
-          />
+          <div className="dashboard-items">
+            {randomCards.map((card, index) => (
+              <Card key={index} {...card} />
+            ))}
+          </div>
+
+          <div className="cards-container">
+            <Card
+              title={getRandomValue(100, 150).toString()}
+              subtitle="Valor Actual Ritmo Cardiaco"
+              showWave={true}
+              widget={
+                <IconFactory
+                  color="#AABDFF"
+                  height={70}
+                  width={74}
+                  name="HomeSimple"
+                />
+              }
+              percentageWidth={100}
+              percentageHeight={80}
+            />
+            <Card
+              title={getRandomValue(100, 150).toString()}
+              subtitle="Historico Ritmo Cardiaco"
+              showWave={true}
+              widget={
+                <IconFactory
+                  color="#AABDFF"
+                  height={70}
+                  width={74}
+                  name="HomeSimple"
+                />
+              }
+              percentageWidth={100}
+              percentageHeight={80}
+            />
+          </div>
         </div>
       </div>
     </section>
