@@ -1,14 +1,5 @@
-import { StaticImageData } from "next/image"
+import { CardProps } from "@/components/molecules/card/CardProps"
 
 export interface DashBoardProps {
-  cards: Array<{
-    title?: string
-    subtitle?: string
-    showWave?: boolean
-    widget?: React.ReactNode
-    linearGradient?: boolean
-    percentageWidth?: number
-    percentageHeight?: number
-  }>
-  background: StaticImageData
+  cards?: CardProps[]
 }

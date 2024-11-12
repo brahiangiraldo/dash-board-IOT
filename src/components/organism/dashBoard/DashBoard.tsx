@@ -1,11 +1,14 @@
+"use client"
 import React, { useEffect, useState } from "react"
+import Image from "next/image"
 import "./dashBoard.css"
 import { DashBoardProps } from "./DashBoardProps"
 import MenuContent from "../menu-content/MenuContent"
 import Card from "@/components/molecules/card/Card"
+import imageSrc from "@/assets/images/background_2.jpg"
 import { IconFactory } from "@/components/atoms/icons/domain/use-cases/factoryIcon"
 
-const DashBoard = ({ cards }: { cards: Array<any> }) => {
+const DashBoard = ({ cards = [] }: DashBoardProps) => {
   const [randomCards, setRandomCards] = useState(cards)
 
   const getRandomValue = (min: number, max: number) => {
@@ -21,12 +24,22 @@ const DashBoard = ({ cards }: { cards: Array<any> }) => {
   }
 
   useEffect(() => {
-    const interval = setInterval(updateRandomValues, 3000) // Actualiza cada 3 segundos
+    const interval = setInterval(updateRandomValues, 3000)
     return () => clearInterval(interval)
   }, [randomCards])
 
   return (
     <section className="dashboard-section">
+      <div className="dashboard-background">
+        <Image
+          src={imageSrc}
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </div>
+
       <div className="dashboard-menu">
         <MenuContent
           username="Maria Camila Echavarria"

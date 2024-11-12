@@ -6,12 +6,7 @@ import { useEffect, useState } from "react"
 // components, interfaces, types and functions
 
 import { SearchParams } from "@/models/interfaces/ParamsProps"
-import {
-  changeLanguage,
-  getLang,
-  InitializeLanguage,
-  validateLangUrl,
-} from "@/helpers/language"
+import { changeLanguage, getLang } from "@/helpers/language"
 import { onActiveLinks, onDetectRedirect } from "@/helpers/redirectCustom"
 import getLanguage, { LanguagesType } from "@/models/i18n"
 import { Seo } from "@/components/atoms/seo/Seo"
@@ -23,7 +18,6 @@ import { IconFactory } from "@/components/atoms/icons/domain/use-cases/factoryIc
 
 const HomePage = ({ params: { lng } }: SearchParams) => {
   const [lang, setLang] = useState<LanguagesType>(lng)
-  const defaultLanguage = getLang()
 
   const changeLang = (lang: LanguagesType) => {
     setLang(lang)
@@ -108,14 +102,3 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
 }
 
 export default HomePage
-
-{
-  /* <Seo
-        title={translate.HOME.TITLE}
-        description={translate.HOME.DESCRIPTION}
-        lang={lang}
-      />
-     <Navbar changeLang={changeLang} lng={lang} defaultLang={defaultLanguage} />
-      <ContactUs lng={lang} defaultLang={defaultLanguage}/>
-      <Footer lng={lang} defaultLang={defaultLanguage} /> */
-}
