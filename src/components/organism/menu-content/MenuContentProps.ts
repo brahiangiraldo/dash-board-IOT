@@ -3,14 +3,9 @@ import { ItemMenuBarProps } from "@/components/molecules/item-menubar/ItemMenuba
 export interface MenuContentProps {
   open: boolean
   username: string
-  documentId: string // Nuevo
-  age: number // Nuevo
-  height: number // Nuevo
-  weight: number // Nuevo
+  documentId: string
+  age: number
+  height: number
+  weight: number
   title: string
-}
-
-interface Logout {
-  handleLogout: () => void
-  text: string
 }

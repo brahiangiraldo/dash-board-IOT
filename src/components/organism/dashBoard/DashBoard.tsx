@@ -46,7 +46,7 @@ const DashBoard = ({ cards = [] }: DashBoardProps) => {
             username="Maria Camila Echavarria"
             documentId="1000090191"
             age={24}
-            height={1.6}
+            height={1.62}
             weight={50}
             title="Datos del paciente"
             open={true}
