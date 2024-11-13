@@ -4,7 +4,7 @@ import "./card.css"
 import BoldTitle from "@/components/atoms/bold-title/BoldTitle"
 
 const Card = (props: CardProps) => {
-  const [title, setTitle] = useState("")
+  const [title, setTitle] = useState(props.title || "")
 
   useEffect(() => {
     setTitle(props.title || "")
@@ -26,7 +26,13 @@ const Card = (props: CardProps) => {
         {/**Subtitle */}
         <span className="card-subtitle">{props.subtitle}</span>
         {/**Title */}
-        {title ? <BoldTitle text={title} /> : ""}
+        {title ? (
+          <div suppressHydrationWarning={true}>
+            <BoldTitle text={title} />
+          </div>
+        ) : (
+          ""
+        )}
       </section>
     </article>
   )

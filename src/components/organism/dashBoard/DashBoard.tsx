@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, Suspense } from "react"
 import Image from "next/image"
 import "./dashBoard.css"
 import { DashBoardProps } from "./DashBoardProps"
@@ -60,41 +60,47 @@ const DashBoard = ({ cards = [] }: DashBoardProps) => {
 
           <div className="dashboard-items">
             {randomCards.map((card, index) => (
-              <Card key={index} {...card} />
+              <Suspense fallback={<div>Loading...</div>} key={index}>
+                <Card {...card} />
+              </Suspense>
             ))}
           </div>
 
           <div className="cards-container">
-            <Card
-              title={getRandomValue(100, 150).toString()}
-              subtitle="Valor Actual Ritmo Cardiaco"
-              showWave={true}
-              widget={
-                <IconFactory
-                  color="#AABDFF"
-                  height={70}
-                  width={74}
-                  name="HomeSimple"
-                />
-              }
-              percentageWidth={100}
-              percentageHeight={80}
-            />
-            <Card
-              title={getRandomValue(100, 150).toString()}
-              subtitle="Historico Ritmo Cardiaco"
-              showWave={true}
-              widget={
-                <IconFactory
-                  color="#AABDFF"
-                  height={70}
-                  width={74}
-                  name="HomeSimple"
-                />
-              }
-              percentageWidth={100}
-              percentageHeight={80}
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Card
+                title={getRandomValue(100, 150).toString()}
+                subtitle="Valor Actual Ritmo Cardiaco"
+                showWave={true}
+                widget={
+                  <IconFactory
+                    color="#AABDFF"
+                    height={70}
+                    width={74}
+                    name="HomeSimple"
+                  />
+                }
+                percentageWidth={100}
+                percentageHeight={80}
+              />
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Card
+                title={getRandomValue(100, 150).toString()}
+                subtitle="Historico Ritmo Cardiaco"
+                showWave={true}
+                widget={
+                  <IconFactory
+                    color="#AABDFF"
+                    height={70}
+                    width={74}
+                    name="HomeSimple"
+                  />
+                }
+                percentageWidth={100}
+                percentageHeight={80}
+              />
+            </Suspense>
           </div>
         </div>
       </div>
