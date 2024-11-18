@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState, Suspense } from "react"
+import React, { Suspense, useEffect } from "react"
 import Image from "next/image"
 import "./dashBoard.css"
 import { DashBoardProps } from "./DashBoardProps"
@@ -7,26 +7,9 @@ import MenuContent from "../menu-content/MenuContent"
 import Card from "@/components/molecules/card/Card"
 import imageSrc from "@/assets/images/background_2.jpg"
 import { IconFactory } from "@/components/atoms/icons/domain/use-cases/factoryIcon"
+import { fetchData } from "@/infraestructure/services/HttpApiServices"
 
 const DashBoard = ({ cards = [] }: DashBoardProps) => {
-  const [randomCards, setRandomCards] = useState(cards)
-
-  const getRandomValue = (min: number, max: number) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min
-  }
-
-  const updateRandomValues = () => {
-    const updatedCards = randomCards.map((card) => ({
-      ...card,
-      title: getRandomValue(1, 150).toString(),
-    }))
-    setRandomCards(updatedCards)
-  }
-
-  useEffect(() => {
-    const interval = setInterval(updateRandomValues, 3000)
-    return () => clearInterval(interval)
-  }, [randomCards])
 
   return (
     <section className="dashboard-section">
@@ -59,7 +42,7 @@ const DashBoard = ({ cards = [] }: DashBoardProps) => {
           </div>
 
           <div className="dashboard-items">
-            {randomCards.map((card, index) => (
+            {cards.map((card, index) => (
               <Suspense fallback={<div>Loading...</div>} key={index}>
                 <Card {...card} />
               </Suspense>
@@ -69,7 +52,7 @@ const DashBoard = ({ cards = [] }: DashBoardProps) => {
           <div className="cards-container">
             <Suspense fallback={<div>Loading...</div>}>
               <Card
-                title={getRandomValue(100, 150).toString()}
+                title="120"
                 subtitle="Valor Actual Ritmo Cardiaco"
                 showWave={true}
                 widget={
@@ -86,7 +69,7 @@ const DashBoard = ({ cards = [] }: DashBoardProps) => {
             </Suspense>
             <Suspense fallback={<div>Loading...</div>}>
               <Card
-                title={getRandomValue(100, 150).toString()}
+                title="110"
                 subtitle="Historico Ritmo Cardiaco"
                 showWave={true}
                 widget={

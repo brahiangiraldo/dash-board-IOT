@@ -9,4 +9,5 @@ export const apis = {
   contact: `${rootServer}/lead/email`,
   getCountries: `${apiCountryURL}/api/get-countries`,
   getCountry: `${ipregistryURL}?key=${ipregistryKey}`,
+  data: `${rootServer}/data`
 }
