@@ -131,7 +131,7 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
       },
       {
         title: String(response[4].medidaValor),
-        subtitle: "Temperatura Ambiente",
+        subtitle: "Temperatura Ambiente.",
         showWave: true,
         widget: (
           <IconFactory color="#AABDFF" height={60} width={64} name="HomeSimple" />
