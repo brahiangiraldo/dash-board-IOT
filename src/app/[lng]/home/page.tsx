@@ -6,13 +6,7 @@ import { useEffect, useState } from "react"
 // components, interfaces, types and functions
 
 import { SearchParams } from "@/models/interfaces/ParamsProps"
-import { changeLanguage, getLang } from "@/helpers/language"
 import { onActiveLinks, onDetectRedirect } from "@/helpers/redirectCustom"
-import getLanguage, { LanguagesType } from "@/models/i18n"
-import { Seo } from "@/components/atoms/seo/Seo"
-import Navbar from "@/components/organism/navbar/Navbar"
-import ContactUs from "@/components/organism/contactUs/ContactUs"
-import Footer from "@/components/organism/footer/Footer"
 import DashBoard from "@/components/organism/dashBoard/DashBoard"
 import { IconFactory } from "@/components/atoms/icons/domain/use-cases/factoryIcon"
 import { fetchData } from "@/infraestructure/services/HttpApiServices"
@@ -20,7 +14,7 @@ import { fetchData } from "@/infraestructure/services/HttpApiServices"
 const HomePage = ({ params: { lng } }: SearchParams) => {
   const [dataCard, setDataCard] = useState([
     {
-      title: "5",
+      title: "0",
       subtitle: "Activo",
       showWave: true,
       widget: (
@@ -30,7 +24,7 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
       percentageHeight: 80,
     },
     {
-      title: "36",
+      title: "0",
       subtitle: "Temperatura Ambiental",
       showWave: true,
       widget: (
@@ -40,7 +34,7 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
       percentageHeight: 80,
     },
     {
-      title: "80",
+      title: "0",
       subtitle: "Humedad Ambiental",
       showWave: true,
       widget: (
@@ -50,7 +44,7 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
       percentageHeight: 80,
     },
     {
-      title: "80",
+      title: "0",
       subtitle: "Temperatura Corporal",
       showWave: true,
       widget: (
@@ -60,7 +54,7 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
       percentageHeight: 80,
     },
     {
-      title: "100",
+      title: "0",
       subtitle: "Hist. Temp Corporal",
       showWave: true,
       widget: (
@@ -70,7 +64,7 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
       percentageHeight: 80,
     },
     {
-      title: "70",
+      title: "0",
       subtitle: "Saturacion",
       showWave: true,
       widget: (
@@ -81,21 +75,21 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
     },
   ])
 
-  const [lang, setLang] = useState<LanguagesType>(lng)
+  // const [lang, setLang] = useState<LanguagesType>(lng)
 
-  const changeLang = (lang: LanguagesType) => {
-    setLang(lang)
-    changeLanguage(lang)
-  }
+  // const changeLang = (lang: LanguagesType) => {
+  //   setLang(lang)
+  //   changeLanguage(lang)
+  // }
 
-  const translate = getLanguage(lang)
+  // const translate = getLanguage(lang)
 
   useEffect(() => {
     onActiveLinks()
     onDetectRedirect()
   }, [])
 
-  const getData = async() => {
+  const getData = async () => {
     const response = await fetchData()
     console.log(response[1])
     setDataCard([
@@ -104,7 +98,12 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
         subtitle: "Temperatura Coporal",
         showWave: true,
         widget: (
-          <IconFactory color="#AABDFF" height={60} width={64} name="HomeSimple" />
+          <IconFactory
+            color="#AABDFF"
+            height={60}
+            width={64}
+            name="HomeSimple"
+          />
         ),
         percentageWidth: 100,
         percentageHeight: 80,
@@ -114,7 +113,12 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
         subtitle: "Ritmo Cardiaco",
         showWave: true,
         widget: (
-          <IconFactory color="#AABDFF" height={60} width={64} name="HomeSimple" />
+          <IconFactory
+            color="#AABDFF"
+            height={60}
+            width={64}
+            name="HomeSimple"
+          />
         ),
         percentageWidth: 100,
         percentageHeight: 80,
@@ -124,7 +128,12 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
         subtitle: "Saturacion Oxigeno",
         showWave: true,
         widget: (
-          <IconFactory color="#AABDFF" height={60} width={64} name="HomeSimple" />
+          <IconFactory
+            color="#AABDFF"
+            height={60}
+            width={64}
+            name="HomeSimple"
+          />
         ),
         percentageWidth: 100,
         percentageHeight: 80,
@@ -134,7 +143,12 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
         subtitle: "Temperatura Ambiente.",
         showWave: true,
         widget: (
-          <IconFactory color="#AABDFF" height={60} width={64} name="HomeSimple" />
+          <IconFactory
+            color="#AABDFF"
+            height={60}
+            width={64}
+            name="HomeSimple"
+          />
         ),
         percentageWidth: 100,
         percentageHeight: 80,
@@ -144,7 +158,12 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
         subtitle: "Humedad Ambiente",
         showWave: true,
         widget: (
-          <IconFactory color="#AABDFF" height={60} width={64} name="HomeSimple" />
+          <IconFactory
+            color="#AABDFF"
+            height={60}
+            width={64}
+            name="HomeSimple"
+          />
         ),
         percentageWidth: 100,
         percentageHeight: 80,
@@ -154,7 +173,12 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
         subtitle: "Saturacion",
         showWave: true,
         widget: (
-          <IconFactory color="#AABDFF" height={60} width={64} name="HomeSimple" />
+          <IconFactory
+            color="#AABDFF"
+            height={60}
+            width={64}
+            name="HomeSimple"
+          />
         ),
         percentageWidth: 100,
         percentageHeight: 80,
@@ -162,11 +186,10 @@ const HomePage = ({ params: { lng } }: SearchParams) => {
     ])
   }
   useEffect(() => {
-    setInterval(function() {
-      getData();
-    }, 5000);
-  },[])
-
+    setInterval(function () {
+      getData()
+    }, 3000)
+  }, [])
 
   return (
     <>
